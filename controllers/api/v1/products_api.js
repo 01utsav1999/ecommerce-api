@@ -3,6 +3,7 @@ const Products = require('../../../models/products');
 module.exports.create = async function(req,res){
     try{
         const product = await Products.create(req.body);
+        console.log('product', product);
         return res.status(200).json({
             success: true,
             message: "Product created successfully",
